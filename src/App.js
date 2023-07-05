@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div classname = "container">
+      <div className = "container">
         <Balance />
         <IncomeExpenses />
         <TransactionList />
