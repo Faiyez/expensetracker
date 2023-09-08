@@ -1,6 +1,17 @@
-export default (state, action) => {
+const reducer = (state, action) => {
     switch(action.type){
-        default: 
-        return state;
+        case 'DELETE_TRANSACTION':
+            return{
+                ...state,
+                transactions: state.transactions.filter(transactions => transactions.id !== action.payload)
+            }
+        case 'ADD_TRANSACTION':
+            return{
+                ...state,
+                transactions: [action.payload, ...state.transactions]
+            }    
+        default:
+            return state;
     }
 }
+export default reducer;
